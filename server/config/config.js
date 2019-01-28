@@ -17,7 +17,7 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/landing'
 } else {
-    urlDB = 'mongodb://isaac.nuflo:prodequa123@ds111025.mlab.com:11025/landing'
+    urlDB = process.env.MONGO_URI;
 }
 
 process.env.URLDB = urlDB;
