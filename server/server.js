@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 app.use(require('./routes/usuario'));
 
-mongoose.connect('mongodb://isaac.nuflo:prodequa123@ds111025.mlab.com:11025/landing', { useNewUrlParser: true }, (err, res) => {
+mongoose.connect(process.env.URLDB, { useNewUrlParser: true }, (err, res) => {
     if (err) throw err;
     console.log('Base de datos ONLINE');
 });
