@@ -16,6 +16,10 @@ let productoSchema = new Schema({
         type: String,
         required: false
     },
+    img: {
+        type: String,
+        required: false
+    },
     disponible: {
         type: Boolean,
         required: true,
@@ -32,5 +36,7 @@ let productoSchema = new Schema({
     }
 });
 
-productoSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico' });
+productoSchema.plugin(uniqueValidator, {
+    message: '{PATH} debe ser unico'
+});
 module.exports = mongoose.model('Producto', productoSchema);
